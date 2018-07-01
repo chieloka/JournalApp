@@ -19,6 +19,9 @@ You must have installed
   import project
   ```
 - Build and run project from android studio
+
+### APK File
+https://drive.google.com/file/d/1Sar_I012cCLZS6KAi5j9ARmSALn2kk8y/view?usp=sharing
   
 ## Built With
 * [Maven](https://maven.apache.org/) - Dependency Management
