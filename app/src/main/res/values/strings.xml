@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Journal App</string>
+    <string name="action_settings">Settings</string>
+    <string name="make_an_entry">Make an entry</string>
+    <string name="enter">Enter</string>
+    <string name="whats_on_your_mind">Whats on your mind?</string>
+    <string name="title_activity_view_entry">View entry</string>
+    <string name="update">Update</string>
+    <string name="save">Save</string>
+</resources>

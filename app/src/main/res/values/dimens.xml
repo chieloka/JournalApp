@@ -1,0 +1,13 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="half_padding">8dp</dimen>
+    <dimen name="one_padding">16dp</dimen>
+    <dimen name="two_padding">32dp</dimen>
+    <dimen name="m_label">12sp</dimen>
+    <dimen name="m_big_text">50sp</dimen>
+    <dimen name="s12">12dp</dimen>
+    <dimen name="dp5">5dp</dimen>
+    <dimen name="dp1">1dp</dimen>
+    <dimen name="sp20">20sp</dimen>
+    <dimen name="sp35">35sp</dimen>
+</resources>

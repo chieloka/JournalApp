@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PostActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/one_padding">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="@dimen/one_padding">
+
+            <ImageView
+                android:id="@+id/send_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_action_calendar_green"
+                />
+
+            <EditText
+                android:id="@+id/dateEditText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:focusable="false"
+                android:longClickable="false"
+                android:fontFamily="casual"
+                android:background="@android:color/transparent"
+                />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="@color/lightGrey"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/whats_on_your_mind"
+            android:textSize="@dimen/m_label"
+            android:textColor="@color/darkGrey"
+            android:layout_marginTop="@dimen/one_padding"
+            android:layout_marginBottom="@dimen/one_padding"/>
+
+        <EditText
+            android:id="@+id/feelingEditText"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginBottom="@dimen/two_padding"
+            android:fontFamily="casual"
+            android:gravity="top" android:background="@android:color/transparent"/>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="@color/lightGrey"/>
+
+        <Button
+            android:id="@+id/searchBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/mDark"
+            android:background="@color/colorAccent"
+            android:text="@string/save"
+            android:layout_marginTop="@dimen/two_padding"
+            android:onClick="onSaveBtnClicked"
+            />
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
