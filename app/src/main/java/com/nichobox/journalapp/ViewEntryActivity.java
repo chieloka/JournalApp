@@ -54,6 +54,7 @@ public class ViewEntryActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
 
+        //check if an intent extra was passed. if so retrieve the entry
         if (intent != null && intent.hasExtra(Intent.EXTRA_TEXT)){
             entryId = Integer.parseInt(intent.getStringExtra(Intent.EXTRA_TEXT));
 
@@ -69,6 +70,7 @@ public class ViewEntryActivity extends AppCompatActivity {
             });
 
         }else{
+            //exit and go back to the previous activity
             finish();
         }
 
@@ -85,6 +87,7 @@ public class ViewEntryActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
+    ////populate the date and entries text views
     private void displayEntry(FeelingEntry feelingEntry) {
         Date postDate = feelingEntry.getPostDate();
         String dDate = (String) DateFormat.format("dd MMMM yyyy", postDate);

@@ -107,6 +107,7 @@ public class MainActivity extends AppCompatActivity implements FeelingAdapter.It
         fetchFeelings();
     }
 
+    //confirm if user wants to delete entries for that date
     private void confirmDelete(final RecyclerView.ViewHolder viewHolder) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder
@@ -147,6 +148,7 @@ public class MainActivity extends AppCompatActivity implements FeelingAdapter.It
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
+        //If user is user is not logged in open loginActivity
         if(currentUser == null){
             Intent intent = new Intent(MainActivity.this, LoginActivity.class);
             startActivity(intent);
@@ -154,6 +156,7 @@ public class MainActivity extends AppCompatActivity implements FeelingAdapter.It
         }
     }
 
+    //Retrieve all entries in the journal
     private void fetchFeelings() {
         MainViewModel mainViewModel = ViewModelProviders.of(this).get(MainViewModel.class);
         mainViewModel.getFeelings().observe(this, new Observer<List<FeelingEntry>>() {
@@ -181,6 +184,7 @@ public class MainActivity extends AppCompatActivity implements FeelingAdapter.It
 
     @Override
     public void onItemClickListener(int itemId) {
+        //Open entries for the particular day selected from the list
         Intent intent = new Intent(MainActivity.this, ViewEntryActivity.class);
         intent.putExtra(Intent.EXTRA_TEXT, String.valueOf(itemId));
         startActivity(intent);

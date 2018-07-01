@@ -81,9 +81,11 @@ public class PostActivity extends AppCompatActivity {
         Date currDate = Calendar.getInstance().getTime();
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
         String today = formatter.format(currDate);
+        //set date editText field to current date
         dateET.setText(today);
     }
 
+    //onSaveBtnClicked is called after the user clicks the save button
     public void onSaveBtnClicked(View view) {
         date = new Date();
         String dDate = dateET.getText().toString();
@@ -99,13 +101,16 @@ public class PostActivity extends AppCompatActivity {
         AppExecutors.getInstance().diskIO().execute(new Runnable() {
             @Override
             public void run() {
+                // Attempt to fetch Any previous entry with the same date if it exist
                 final FeelingEntry oldFeeling = appDatabase.feelingDao().loadFeelingByDate(finalDate);
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
                         if(oldFeeling != null){
+                            //an old entry for the selected date exists so update the old record by merging them
                             updateFeeling(oldFeeling);
                         }else{
+                            //no old record was found so save as new entry
                             saveFeeling();
                         }
 
@@ -118,6 +123,7 @@ public class PostActivity extends AppCompatActivity {
 
     }
 
+    //Update old record with the new entry that share same date
     private void updateFeeling(FeelingEntry oldFeeling) {
         String dFeeling = oldFeeling.getFeeling()+"\n\n"+feelingET.getText().toString();
         final FeelingEntry feelingEntry = new FeelingEntry(dFeeling, date);
@@ -132,6 +138,7 @@ public class PostActivity extends AppCompatActivity {
         });
     }
 
+    //Save new entry
     private void saveFeeling() {
         String dFeeling = feelingET.getText().toString();
 
@@ -146,6 +153,7 @@ public class PostActivity extends AppCompatActivity {
     }
 
 
+    //Update the date EditText view with the currently selected date from the datepicker
     private void updateLabel() {
         String myFormat = "yyyy-MM-dd"; //In which you need put here
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);

@@ -50,6 +50,7 @@ public class UpdateEntryActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
 
+        //check if an intent extra was passed. if so retrieve the entry
         if (intent != null && intent.hasExtra(Intent.EXTRA_TEXT)){
             entryId = Integer.parseInt(intent.getStringExtra(Intent.EXTRA_TEXT));
 
@@ -78,6 +79,8 @@ public class UpdateEntryActivity extends AppCompatActivity {
         getSupportActionBar().setTitle(dDate);
     }
 
+
+    //Update the entry
     public void onUpdateBtnClicked(View view) {
         String dFeeling = et_entry.getText().toString();
         final FeelingEntry feelingEntry = new FeelingEntry(dFeeling, postDate);
