@@ -174,9 +174,14 @@ public class MainActivity extends AppCompatActivity implements FeelingAdapter.It
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        //logout menu selected
+        if (id == R.id.action_logout) {
+            //log user out using the firebase instance
+            mAuth.signOut();
+            //take user to LoginActivity to re-login to keep using the app
+            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+            startActivity(intent);
+            finish();
         }
 
         return super.onOptionsItemSelected(item);
