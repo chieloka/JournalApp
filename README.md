@@ -8,7 +8,8 @@ A Simple android app that lets users enter their thoughts and feelings daily.
 - Users can edit posts for the entire day from a single screen
 
 # Screens
-![Alt text](Image from iOS.jpg)
+![Screen1](home.jpg)
+![Screen2](image_from_ios.jpg)
 
 ## Getting Started
 Get started by downloading the zip of these repository or simply clone it to your PC
