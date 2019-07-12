@@ -6,6 +6,10 @@ A Simple android app that lets users enter their thoughts and feelings daily.
 - Users select a date from a date picker, current date is selected by default when making a new entry
 - Entries for a date that already contains records would be merged under same date
 - Users can edit posts for the entire day from a single screen
+
+# Screens
+![Alt text](Image from iOS.jpg)
+
 ## Getting Started
 Get started by downloading the zip of these repository or simply clone it to your PC
 ### Prerequisites
